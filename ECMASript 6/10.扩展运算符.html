@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // [...]将一个数组转为用逗号分隔的参数序列，对数组进行解包
+        const mihoyo = ['原神', '崩坏3rd', '未定事件簿', '崩坏学园2'] // =>'原神', '崩坏3rd', '未定事件簿', '崩坏学园2'
+
+        function game() {
+            console.log(arguments);
+        }
+        game(...mihoyo)
+    </script>
+</body>
+
+</html>

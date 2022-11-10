@@ -28,10 +28,10 @@
     </div>
     <script>
         let items = document.getElementsByClassName('item')
-        for (var i = 0; i < items.length; i++) {
+        for (let i = 0; i < items.length; i++) {
             items[i].onclick = function () {
                 //改变当前元素的颜色
-                this.style.background = 'pink'
+                items[i].style.background = 'pink'
             }
         }
     </script>

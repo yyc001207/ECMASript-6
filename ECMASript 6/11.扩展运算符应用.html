@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // 数组合并
+        const water = ['心海', '夜阑']
+        const fire = ['可莉', '班尼特']
+        const team = [...water, ...fire]
+        console.log(team)
+        // 数组克隆
+        const god = ['摩拉克斯', '巴巴托斯', '巴尔泽布', '布耶尔']
+        const poor = [...god]
+        console.log(poor)
+        // 伪数组转化为真实数组
+        const divs = document.getElementsByTagName('div')
+        const divArr = [...divs]
+        console.log(divArr)
+    </script>
+</body>
+
+</html>

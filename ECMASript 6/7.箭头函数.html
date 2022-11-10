@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //箭头声明函数
+        let fn = (a, b) => {
+            return a + b
+        }
+        let c = fn(1, 2)
+        console.log(c);
+
+        // this是静态的，this始终指向函数声明时所在作用域下的this的值
+        function getName() {
+            console.log(this.name);
+        }
+        let getName2 = () => {
+            console.log(this.name);
+        }
+        // 设置window对象name的值
+        window.name = '可莉'
+        const school = {
+            name: '西风骑士团'
+        }
+        //直接调用
+        getName()
+        getName2()
+        // call方法调用
+        getName.call(school)
+        getName2.call(school)// 值未改变
+
+        // 不能作为构造函数
+        // let Person = (name, age) => {
+        //     this.name = name
+        //     this.age = age
+        // }
+
+        // let me = new Person('荧', '不详')
+        // console.log(me)// Person is not a constructor  Person不是一个构造系
+
+        // 不能使用arguments
+        // let fn3 = () => {
+        //     console.log(arguments);
+        // }
+        // fn3(1, 2, 3)
+
+        // 简写
+        // 有且仅有一个形参，可以省略小括号
+        let add = n => {
+            return n + n
+        }
+        console.log(add(9))
+        // 只有一条语句，省略大括号，此时retrun必须省略
+        let pow = n => n * n
+        console.log(pow(9))
+    </script>
+</body>
+
+</html>
