@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve('神里绫华')
+                reject('sb')
+            }, 2000)
+        })
+
+        // then方法的返回结果是一个promise对象，状态由回调函数的执行结果决定
+        // 如果回调函数的结果是非promise的属性，状态为成功
+        // 如果是一个promise对象，则返回结果由返回的promise对象状态决定
+        // 抛出错误状态为reject
+        const result = p.then(value => {
+            console.log(value);
+        }, reason => {
+            console.log(reason);
+        })
+        console.log(result);
+    </script>
+</body>
+
+</html>

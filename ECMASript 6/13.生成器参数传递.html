@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        function* gen(){
-            yield 111
+        function* gen(arg) {
+            console.log(arg);
+            // yield的返回值是next传递的参数
+            let one = yield 111
+            console.log(one);
             yield 222
             yield 333
         }
 
-        let 
+        let iterator = gen('AAA')
+        console.log(iterator.next());
+        //next可以传入实参
+        console.log(iterator.next('BBB'));
+        console.log(iterator.next());
+        console.log(iterator.next());
     </script>
 </body>
+
 </html>
