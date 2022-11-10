@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 声明一个对象
+        const team = {
+            name: '玉皇大帝',
+            stus: [
+                '刻晴',
+                '菲谢尔',
+                '纳西妲',
+                '枫原万叶'
+            ],
+            [Symbol.iterator]() {
+                let index = 0
+                return {
+                    next: () => {
+                        if (index < this.stus.length) {
+                            const result = { value: this.stus[index], done: false }
+                            index++
+                            return result
+                        } else {
+                            return { value: undefined, done: true }
+                        }
+                    }
+                }
+            }
+        }
+        // 遍历这个对象 返回结果是数组里的元素
+        for (const v of team) {
+            console.log(v)
+        }
+    </script>
+</body>
+
+</html>

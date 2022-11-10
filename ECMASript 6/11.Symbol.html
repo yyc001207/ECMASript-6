@@ -14,16 +14,18 @@
 
         // 创建symbol
         let s = Symbol()
-        console.log(s, typeof s)
+        console.log(s, typeof s)// Symbol() 'symbol'
 
         let s2 = Symbol('绫华')// 可以传参，字符串只是一个标志
         let s3 = Symbol('绫华')
         console.log(s2 === s3)// false
-
+        //Symbol.for创建
         let s4 = Symbol.for('绫华')
         let s5 = Symbol.for('绫华')
         console.log(s4 === s5)// true
 
+        console.log(s4+'sss')// Cannot convert a Symbol value to a string
+        console.log(s4 + 4)// Cannot convert a Symbol value to a number
     </script>
 </body>
 

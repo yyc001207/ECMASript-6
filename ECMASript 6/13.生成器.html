@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 生成器函数是ES6提供的一种异步编程解决方案，语法行为与传统函数完全不同
+        // yield函数代码的分隔符 可以通过迭代器输出
+        function* gen() {//声明
+            // console.log(111);
+            yield '玉皇大帝',
+                // console.log(222);
+            yield '雷九万班',
+                // console.log(222);
+            yield '国家队'
+            // console.log(111);
+        }
+        gen().next()// 调用
+
+        for (const v of gen()) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

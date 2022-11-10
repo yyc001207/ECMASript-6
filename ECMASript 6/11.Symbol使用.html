@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //向对象添加属性和方法 up down
+        const game = {
+            name: '琪亚娜',
+            up() { },
+            down() { }
+        }
+        const methods = {
+            up: Symbol(),
+            down: Symbol()
+        }
+        game[methods.up] = function () {
+            console.log('向上');
+        }
+        game[methods.down] = function () {
+            console.log('向下');
+        }
+        console.log(game);
+
+        const game2 = {
+            [Symbol('cook')]: function () {
+                console.log('我可以做饭了');
+            },
+            name: '芽衣',
+            [Symbol('fly')]: function () {
+                console.log('怒吼吧！俱利伽罗');
+            }
+        }
+        // 因为Symbol('say')生成的标识不是唯一的，所以定义的在youxi1里面的[Symbol('say')]是无法调用的，除非把Symbol('say')放块外面定义，并用变量保存
+        
+    </script>
+</body>
+
+</html>
