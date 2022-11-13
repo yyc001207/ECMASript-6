@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Es5的组合继承
+        function Father(money, house) {
+            this.money = money
+            this.house = house
+        }
+        Father.prototype.skill = function () {
+            console.log('生活知识');
+        }
+
+        function Son(money, house, car, job) {
+            Father.call(this, money, house)
+            this.car = car
+            this.job = job
+        }
+        // 设置子级构造函数的原型,继承
+        Son.prototype = new Father()
+        Son.prototype.constructor = Son
+
+        Son.prototype.playGame = function () {
+            console.log('玩原神');
+        }
+
+        const s = new Son('1000', '别墅', '别摸我', '反正不是程序员')
+        console.log(s);
+    </script>
+</body>
+
+</html>

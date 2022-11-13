@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合。
+        // 但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。
+        // Map也实现了iterator接口，所以可以使用『扩展运算符』和『for...of...』进行遍历
+
+        let m = new Map()
+
+        m.set('name', '绫华')// 键名 键值
+        m.set('type', '主C')
+        let key = {
+            school: '稻妻'
+        }
+        m.set(key, ['天守阁', '花见坂', '鸣神大社'])
+        console.log(m.size);// 元素个数
+        m.delete('name')// 删除
+        console.log(m.get(key))// 获取
+        console.log(m)
+        for (const v of m) {
+            console.log(v);
+        }
+        m.clear()// 清空
+    </script>
+</body>
+
+</html>

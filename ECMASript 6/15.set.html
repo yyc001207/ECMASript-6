@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6 提供了新的数据结构 Set（集合）。它类似于数组，但成员的值都是唯一的，
+        // 集合实现了iterator接口，所以可以使用『扩展运算符』和『for...of...』进行遍历
+        let s = new Set()
+        let s2 = new Set(['绫华', '万叶', '心海', '申鹤', '钟离', '绫华', '万叶', '心海', '申鹤'])// 会自动去重
+        s2.add('温迪')// 增加
+        s2.delete('心海')// 删除
+        let result = s2.has('万叶')// 判断是否拥有，返回值为布尔值
+        console.log(s2, typeof s, result);
+        // 实现了iterator
+        for (const v of s2) {
+            console.log(v);
+        }
+        s2.clear()// 清空
+        console.log(s2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Father {
+            constructor(money, house) {
+                this.money = money
+                this.house = house
+            }
+            // 成员属性
+            skill() {
+                console.log('生活技巧');
+            }
+        }
+        class Son extends Father {
+            constructor(money, house, car, job) {
+                super(money, house)
+                this.car = car
+                this.job = job
+            }
+            playGame() {
+                console.log('玩原神');
+            }
+            skill() {
+                console.log('生活技巧');
+            }
+        }
+        const s = new Son('1000', '别墅', '别摸我', '反正不是程序员')
+        console.log(s);
+    </script>
+</body>
+
+</html>
